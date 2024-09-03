@@ -1,0 +1,79 @@
+CREATE DATABASE autoescola
+
+CREATE TABLE cliente (
+id SERIAL PRIMARY KEY,
+Nome VARCHAR(80),
+cpf varchar(14),
+rg varchar(11),
+catpretendida varchar(15),
+dataNasc Date,
+celular varchar(15),
+sexo varchar(10),
+qntaulaspossuidas integer,
+qntaulasfeitas integer,
+orcamento real,
+valorpago real,
+concluido boolean,
+endereco varchar(120),
+datacadastro date,
+formapagamento varchar(15)
+)
+
+CREATE TABLE instrutor (
+id SERIAL PRIMARY KEY,
+Nome VARCHAR(80),
+cpf varchar(14),
+dataNasc Date,
+credencial varchar(20),
+dataPCnh date,
+aulasDadas integer,
+celular varchar(15),
+rg varchar(11),
+ctps varchar(14),
+salario real,
+dataadmissao date,
+diretor varchar(20),
+sexo varchar(10),
+endereco varchar(120)
+)
+
+CREATE TABLE secretario (
+id SERIAL PRIMARY KEY,
+Nome VARCHAR(80),
+cpf varchar(14),
+dataNasc Date,
+celular varchar(15),
+rg varchar(11),
+ctps varchar(14),
+salario real,
+dataadmissao date,
+sexo varchar(10),
+endereco varchar(120)
+)
+
+CREATE TABLE veiculo (
+id SERIAL PRIMARY KEY,
+placa varchar(10),
+cor varchar(20),
+modelo varchar(30),
+validade integer,
+ano integer,
+docpago boolean,
+tipo varchar(20),
+renavam varchar(12),
+chassi varchar(20)
+)
+
+CREATE TABLE aula(
+id SERIAL PRIMARY KEY,
+data date,
+horario varchar(6),
+id_veiculo integer,
+id_instrutor integer,
+id_cliente integer,
+concretizada boolean
+)
+
+
+
+
